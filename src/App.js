@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { connect } form 'react-redux';
 
 function App() {
   return (
@@ -23,4 +24,10 @@ function App() {
   );
 }
 
-export default App;
+function mapStateToProps(state){
+  return {
+    ...state
+  };
+}
+
+export default connect(mapStateToProps)(App);
