@@ -1,25 +1,18 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { connect } form 'react-redux';
+import { connect } from 'react-redux';
+import Game from './Game';
+import { questionAnswer } from './redux/actions'
 
-function App() {
+function App(props) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Game question={props.questions[props.currentQuestion]}
+            onQuestionAnswer={ (answer) => {
+              props.dispatch(questionAnswer(props.currentQuestion, answer))
+            } }
+      />
     </div>
   );
 }
