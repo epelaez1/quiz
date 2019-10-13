@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { QUESTION_ANSWER } from './actions'
+import { QUESTION_ANSWER , CHANGE_CURRENT_QUESTION } from './actions'
 function score(state = 0, action = {}) {
 	switch(action.type) {
 		default:
@@ -16,6 +16,8 @@ function finished(state = false, action = {}) {
 
 function currentQuestion(state = 0, action = {}) {
 	switch(action.type) {
+		case CHANGE_CURRENT_QUESTION:
+			return action.payload.index >= 0? action.payload.index : state;
 		default:
 			return state;
 	}
@@ -27,7 +29,7 @@ function questions(state = [], action = {}) {
 			return state.map( (question, i) => {
 				return { 
 					...question,
-					usserAnswer: action.payload.index === i ?
+					userAnswer: action.payload.index === i ?
 								 action.payload.answer : question.usserAnswer
 				}
 			} )
