@@ -22,7 +22,7 @@ header {
 	width: 70%;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 100px;
+    margin-top: 50px;
     display: flex;
     flex-flow: column wrap;
     font-weight: bold;
@@ -42,7 +42,7 @@ header {
 	display: flex;
 	flex-flow: column wrap;
 	align-items: flex-start;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-content: space-around;
     background-color: #EAFAF1;
 
@@ -53,7 +53,7 @@ header {
 }
 .question_image {
 	flex: 1 1 100%;
-	width: 400px;
+	width: 50%;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
@@ -61,9 +61,9 @@ header {
 
 }
 .question_image > img{
-	width: 100%;
-	height: auto;
-	max-height: 400px;
+	width: auto;
+	height: 300px;
+	max-width: 100%;
 }
 
 .user_card {
@@ -143,7 +143,72 @@ header {
 	border-radius: 5px;
 	padding: 0px 5px;
 	line-height: 35px;
+	user-select: none;
+	-webkit-user-select: none;
+}
+.disabled {
+	cursor: auto;
+	background-color: #6f9e83;
+}
+.button:hover {
+	background-color: #256B43;
+	cursor: pointer;
+}
+.disabled:hover {
+	cursor: auto;
+	background-color: #6f9e83;
 }
 .large {
 	flex-grow: 2;
+}
+
+.tips {
+	text-align: left;
+	line-height: 20px;
+	width: 30%;
+}
+.tips > ul >li {
+	margin-left: 15px;
+	margin-bottom: 20px;
+}
+
+.question_resume {
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: lightgreen;
+    padding: 8px;
+    border-radius: 10px;
+    margin: 15px 0px;
+}
+.question_resume > * {
+	flex: 1 1 0;
+}
+.correct {
+	background-color: #deffe8;
+}
+.empty {
+	background-color: #eaeff7;
+}
+.wrong {
+	background-color: #ffdede;
+}
+.question_resume > div >  img {
+	height: 50px;
+	width: auto;
+}
+.question_resume > span {
+	margin-right: 10px;
+	text-align: left;
+}
+.user_answer {
+	text-align: center !important;
+	background-color: rgb(255,255,255, 0.5);
+	opacity: 50%;
+	line-height: 35px;
+	margin: 0px 25px 0px 25px !important;
+	width: 100px;
+	height: 35px;
+	border-radius: 10px;
 }
