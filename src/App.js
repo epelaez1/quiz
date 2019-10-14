@@ -18,12 +18,12 @@ function App(props) {
         const isCorrect = question.userAnswer && question.answer.toLowerCase() === question.userAnswer.toLowerCase()
         const result = isCorrect
                         ? "correct" 
-                        : question.userAnswer && question.userAnswer != ''? "wrong": "empty" 
+                        : question.userAnswer && question.userAnswer !== ''? "wrong": "empty" 
         return (
-                <div class={"question_resume " + result}>
+                <div className={"question_resume " + result}>
                     <div><img src={question.attachment? question.attachment.url : "/default.jpg"} alt="Default"/></div>
                     <span>{question.question}</span>
-                    <span class="user_answer">{question.userAnswer? question.userAnswer : ""}</span>
+                    <span className="user_answer">{question.userAnswer? question.userAnswer : ""}</span>
                     <span>{result}</span>
                     
                 </div>
@@ -35,7 +35,7 @@ function App(props) {
                 QUIZZ FINISHED
             </header>,
             <div> YOUR SCORE: {score}</div>,
-            <div class="answers">{questions}</div>,
+            <div className="answers">{questions}</div>,
             <Button 
               extraClasses="" 
               text="RESTART GAME"

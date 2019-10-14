@@ -18,7 +18,6 @@ export default class Question extends React.Component {
 		const author = this.props.question.author || default_user;
 		author.photo = author.photo || default_photo;
 
-		console.log(this.props.question);
 		return (
 			<div className="question_card">
 				<div className="question_image">
