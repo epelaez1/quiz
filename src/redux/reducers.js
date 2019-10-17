@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { QUESTION_ANSWER , CHANGE_CURRENT_QUESTION, FINISH_GAME, RESTART_GAME } from './actions'
+import { QUESTION_ANSWER , CHANGE_CURRENT_QUESTION, FINISH_GAME, RESTART_GAME, INIT_GAME } from './actions'
 function score(state = 0, action = {}) {
 	switch(action.type) {
 		default:
@@ -46,6 +46,8 @@ function questions(state = [], action = {}) {
 					userAnswer: ""
 				}
 			})
+		case INIT_GAME:
+			return action.payload.questions;
 		default:
 			return state;
 	}

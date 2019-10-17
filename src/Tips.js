@@ -8,7 +8,7 @@ export default class Tips extends React.Component {
 					Tips:				
 					<ul>
 						{this.props.tips.map( (tip, index) => {
-							return<li>{index + 1}: {tip} </li>
+							return<li key={index} >{index + 1}: {tip} </li>
 						})}
 					</ul>
 				</div>

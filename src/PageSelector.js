@@ -5,7 +5,7 @@ export default class PageSelector extends React.Component {
 		const items = []
 
 		for (var i = 0; i < this.props.numberOfQuestions; i++){
-			items.push(<Button extraClasses={this.props.currentQuestion === i ? "disabled" : ""} value={i} text={i+1} action={this.props.onPageChange} />)
+			items.push(<Button extraClasses={this.props.currentQuestion === i ? "disabled" : ""} value={i} text={i+1} action={this.props.onPageChange} key={i} />)
 		}
 		return (
 			[

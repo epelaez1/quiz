@@ -2,6 +2,8 @@ export const QUESTION_ANSWER = 'QUESTION_ANSWER';
 export const CHANGE_CURRENT_QUESTION = 'CHANGE_CURRENT_QUESTION';
 export const FINISH_GAME = 'FINISH_GAME'
 export const RESTART_GAME = 'RESTART_GAME'
+export const INIT_GAME = 'INIT_GAME'
+
 
 export function questionAnswer(index, answer) {
 	return { type: QUESTION_ANSWER, payload: {index, answer}};
@@ -17,4 +19,9 @@ export function finishGame(){
 
 export function restartGame() {
 	return { type: RESTART_GAME, payload: {}}
+}
+
+export function initGame(questions) {
+	return { type: INIT_GAME, payload: {questions}}
+
 }
