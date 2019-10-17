@@ -22,7 +22,7 @@ header {
 	width: 70%;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 50px;
+    margin-top: 20px;
     display: flex;
     flex-flow: column wrap;
     font-weight: bold;
@@ -43,7 +43,7 @@ header {
 	flex-flow: column wrap;
 	align-items: flex-start;
 	justify-content: space-between;
-	align-content: space-around;
+	align-content: space-between;
     background-color: #EAFAF1;
 
 }
@@ -113,6 +113,7 @@ header {
 	display: flex;
 	flex-direction: row;
 	align-items: flex-start;
+	align-self: flex-end;
 }
 .answer > * {
 	flex: 1 1 0;
@@ -180,7 +181,7 @@ header {
     justify-content: space-between;
     background-color: lightgreen;
     padding: 8px;
-    border-radius: 10px;
+    border-radius: 7px;
     margin: 15px 0px;
 }
 .question_resume > * {

@@ -1,0 +1,31 @@
+import React from 'react';
+import Button from './Button'
+export default class PageSelector extends React.Component {
+	render() {
+		const items = []
+
+		for (var i = 0; i < this.props.numberOfQuestions; i++){
+
+			items.push(<Button extraClasses={this.props.currentQuestion === i ? "disabled" : ""} value={i} text={i+1} action={this.props.onPageChange} key={i} />)
+		}
+		return (
+			[
+				<div className="page_selector">
+					<Button extraClasses={"large " + (this.props.currentQuestion === 0? "disabled " : "" )}
+						text="Prev" 
+						value={this.props.currentQuestion === 0? 0 : this.props.currentQuestion - 1} 
+						action={this.props.onPageChange}
+						key="first"/>
+		            { items }
+					<Button 
+						extraClasses={"large " + (this.props.currentQuestion === this.props.numberOfQuestions - 1 ? "disabled " : "")} 
+						text="Next"
+						value={this.props.currentQuestion === this.props.numberOfQuestions - 1 ? this.props.currentQuestion : this.props.currentQuestion + 1}
+						action={this.props.onPageChange}
+						key="last"/>
+		        </div>
+			]
+
+		)
+	}
+}

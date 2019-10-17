@@ -1,9 +1,8 @@
 import React from 'react';
-import './App.css';
 import { connect } from 'react-redux';
-import Question from './Question';
-import PageSelector from './PageSelector';
-import Button from './Button';
+import Question from './components/Question';
+import PageSelector from './components/PageSelector';
+import Button from './components/Button';
 import { questionAnswer, changeCurrentQuestion, finishGame, restartGame, initGame } from './redux/actions';
 
 class App extends React.Component {
@@ -54,6 +53,7 @@ class App extends React.Component {
                   action={(param) => {
                     this.props.dispatch(restartGame())
                   }}/>,
+                  <div style={{marginBottom: "10px"}}></div>,
                   <Button 
                     extraClasses="" 
                     text="RESTART GAME"
@@ -70,7 +70,7 @@ class App extends React.Component {
               <header>
               QUIZ
               </header>,
-              <Question currentQuestion={this.props.currentQuestion} question={this.props.questions[this.props.currentQuestion]}
+              <Question numberOfQuestions={this.props.questions.length} currentQuestion={this.props.currentQuestion} question={this.props.questions[this.props.currentQuestion]}
                   onQuestionAnswer={ (answer) => {
                     this.props.dispatch(questionAnswer(this.props.currentQuestion, answer))
                   } }
