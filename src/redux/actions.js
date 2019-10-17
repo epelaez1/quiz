@@ -6,22 +6,22 @@ export const INIT_GAME = 'INIT_GAME'
 
 
 export function questionAnswer(index, answer) {
-	return { type: QUESTION_ANSWER, payload: {index, answer}};
+	return { type: QUESTION_ANSWER, payload: { index, answer } };
 }
 
-export function changeCurrentQuestion(index){
-	return { type: CHANGE_CURRENT_QUESTION, payload: {index}}
+export function changeCurrentQuestion(index) {
+	return { type: CHANGE_CURRENT_QUESTION, payload: { index } }
 }
 
-export function finishGame(){
-	return { type: FINISH_GAME, payload: {}}
+export function finishGame() {
+	return { type: FINISH_GAME, payload: {} }
 }
 
 export function restartGame() {
-	return { type: RESTART_GAME, payload: {}}
+	return { type: RESTART_GAME, payload: {} }
 }
 
 export function initGame(questions) {
-	return { type: INIT_GAME, payload: {questions}}
+	return { type: INIT_GAME, payload: { questions } }
 
 }

@@ -5,12 +5,12 @@ import Tips from './Tips'
 export default class Question extends React.Component {
 	render() {
 		const default_photo = {
-			filename : 'default.jpg',
-			mime : 'image/jpeg',
-			url : '/default.jpg'
+			filename: 'default.jpg',
+			mime: 'image/jpeg',
+			url: './default.jpg'
 		}
 		const default_user = {
-			id : -1,
+			id: -1,
 			isAdmin: false,
 			username: 'Anonymous',
 			photo: default_photo
@@ -21,9 +21,9 @@ export default class Question extends React.Component {
 		return (
 			<div className="question_card">
 				<div className="question_image">
-					<img src={this.props.question.attachment? this.props.question.attachment.url : "/default.jpg"} alt="Default" /> 
-					
-					<UserCard author={ author } />
+					<img src={this.props.question.attachment ? this.props.question.attachment.url : default_photo.url} alt="Default" />
+
+					<UserCard author={author} />
 				</div>
 				<div className="question">
 					{this.props.question.question}
@@ -31,9 +31,9 @@ export default class Question extends React.Component {
 				<Tips tips={this.props.question.tips} />
 				<Answer onPageChange={this.props.onPageChange}
 					numberOfQuestions={this.props.numberOfQuestions}
-					currentQuestion={this.props.currentQuestion} 
-					onQuestionAnswer={this.props.onQuestionAnswer} 
-					userAnswer={ this.props.question.userAnswer}/>
+					currentQuestion={this.props.currentQuestion}
+					onQuestionAnswer={this.props.onQuestionAnswer}
+					userAnswer={this.props.question.userAnswer} />
 
 			</div>
 
